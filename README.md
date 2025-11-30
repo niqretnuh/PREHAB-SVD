@@ -1,7 +1,7 @@
 # PREHAB‑SVD
 
-A unified research codebase implementing **Low‑Rank Prehab**, a lightweight pre‑conditioning stage that prepares neural networks for SVD-based compression by optimizing a Fisher‑aligned stable‑rank surrogate before truncation.  
-This repository provides a full experimental pipeline for BERT, ViT, and (soon) LLaMA, modeling closely after modern SVD‑based compression frameworks while remaining modular, readable, and easy to extend.
+We present **Low‑Rank Prehab**, a lightweight pre‑conditioning stage that prepares neural networks for SVD-based compression by optimizing a Fisher‑aligned stable‑rank surrogate before truncation.  
+This repository provides a full experimental pipeline for BERT, ViT, and LLaMA, modeling closely after modern SVD‑based compression frameworks while remaining modular, readable, and easy to extend.
 
 ---
 
@@ -26,13 +26,8 @@ The goal is a consistent, comparable pipeline for understanding:
 ## Directory Structure
 
 ```
-models/
-  bert/        # BERT-specific modules and folding utilities
-  vit/         # ViT helpers, QKV splitting, legacy LoRA variants
-  llama/       # Placeholder stubs for LLaMA-7B support
 scripts/       # Main training, whitening, prehab, and SVD workflows
 utils/         # Metrics, rank functions, data loaders, model ops
-data/          # Dataset notes and pointers (no large files)
 ```
 
 ---
