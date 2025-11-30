@@ -1,17 +1,3 @@
-# Utility functions for metrics and evaluation
-# Move eval_model and related metric functions here
-
-"""Shared metrics & evaluation utilities.
-Centralizes duplicate logic previously in models/bert/utils.py and scattered ViT scripts.
-
-Functions:
-  eval_glue_model(test_dl, model, task): Evaluate GLUE task (classification or STS-B regression).
-  compute_top1(loader, model, device, amp=False): Image classification top-1 accuracy.
-  stable_rank(M, iters=50): Differentiable stable/effective rank surrogate.
-  overall_effective_rank(modules, iters=50): Sum of stable ranks over provided modules list.
-
-Note: Existing scripts still import from models.bert.utils; keep those until refactor completes.
-"""
 from __future__ import annotations
 import math
 import torch
@@ -110,5 +96,3 @@ def entropy_effective_rank(W: torch.Tensor, eps: float = 1e-6):
     p = (s + eps) / (s.sum() + eps)
     h = -(p * (p + eps).log()).sum().item()
     return math.exp(h)
-
-# ...end of file...

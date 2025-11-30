@@ -1,19 +1,4 @@
 # Utility functions for model operations
-# Move set_seed, count_params, get_module_references, truncate_wspace_modules here
-
-"""Shared model utility functions.
-Will progressively replace duplicated logic in models/bert/utils.py and ViT scripts.
-
-Functions:
-  set_seed(seed)
-  get_bert_module_references(model, q=True, k=True, v=True, attn_out=True, fc1=True, fc2=True)
-  count_params(modules)
-  truncate_wspace(W, L, keep_ratio)
-  truncate_wspace_modules(modules, L_list, keep_ratio, device)
-  fold_in_deltas_bert(model, device, to_copy=False)  (thin wrapper delegating to legacy utils if present)
-
-Note: For now we import models.bert.utils for backward compatibility.
-"""
 from __future__ import annotations
 import math
 import copy

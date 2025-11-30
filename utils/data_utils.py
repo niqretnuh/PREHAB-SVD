@@ -1,11 +1,3 @@
-"""Shared data loading utilities.
-Migrates logic from models/bert/utils.py and models/vit/imagenet.py.
-
-Functions:
-  get_glue_dataloader(task_name, batch_size=32, split='train', **kwargs)
-  load_imagenet(path, simple_augmentation=False)  (delegates to models.vit.imagenet)
-  build_tokenizer(model_name='bert-base-uncased')
-"""
 from __future__ import annotations
 import torch
 from datasets import load_dataset
@@ -54,5 +46,3 @@ def load_imagenet(path: str, simple_augmentation: bool = False):
     if _vit_load_imagenet is None:
         raise RuntimeError('ViT ImageNet loader not available in this environment.')
     return _vit_load_imagenet(path, simple_augmentation=simple_augmentation)
-
-# ...end of file...
